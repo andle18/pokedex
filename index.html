@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeDex</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="public/fabicon/favicon-32x32.png"
+    />
+  </head>
+  <body>
+    <h1>Busca a tu Pokémon</h1>
+
+    <div class="buscador">
+      <input
+        type="text"
+        id="campoDeBusqueda"
+        placeholder="Nombres o Numeros"
+        onkeydown="if (event.key === 'Enter') buscarPokemones();"
+      />
+      <button id="btnBuscar" onclick="buscarPokemones()">Buscar</button>
+    </div>
+
+    <p id="indicadorDeCarga" style="display: none">.</p>
+    <div id="informacion"></div>
+
+    <!-- GAME BOY -->
+    <div class="gameboy" id="GameBoy">
+      <div class="screen-area">
+        <div class="power">
+          <div class="indicator">
+            <div class="led"></div>
+            <span class="arc" style="z-index: 2"></span>
+            <span class="arc" style="z-index: 1"></span>
+            <span class="arc" style="z-index: 0"></span>
+          </div>
+          POWER
+        </div>
+
+        <div class="display">
+          <div class="screen-content" id="screenContent">
+            <div class="screen-flash" id="screenFlash"></div>
+
+            <!-- Pantalla de bienvenida (logo) -->
+            <div class="pantalla-bienvenida" id="pantallaBienvenida">
+              <img
+                src="public/img/pokemon.svg"
+                alt="Pokemon Logo"
+                class="logo-bienvenida"
+              />
+              <div class="press-start">PRESS START</div>
+            </div>
+
+            <!-- Pantalla del Pokémon (oculta al inicio) -->
+            <div
+              class="pantalla-pokemon"
+              id="pantallaPokemon"
+              style="display: none"
+            >
+              <img id="imagenDelPokemon" alt="Pokemon" />
+              <div class="nombre-pokemon" id="nombrePokemon">?</div>
+              <div class="numero-pokemon" id="numeroPokemon">#000</div>
+              <div class="info-extra">
+                <div class="info-titulo" id="infoTitulo">TIPOS</div>
+                <div class="info-contenido" id="infoContenido">- / -</div>
+              </div>
+            </div>
+
+            <!-- Pantalla de evoluciones (oculta al inicio) -->
+            <div
+              class="pantalla-evoluciones"
+              id="pantallaEvoluciones"
+              style="display: none"
+            >
+              <div class="evo-titulo">EVOLUCIONES</div>
+              <div class="evo-lista" id="evoLista"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="label">
+          <div class="title">GAME BOY</div>
+          <div class="subtitle">
+            <span class="c">C</span><span class="o1">O</span
+            ><span class="l">L</span><span class="o2">O</span
+            ><span class="r">R</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nintendo">Nintendo</div>
+
+      <div class="controls">
+        <div class="dpad">
+          <div class="up" id="btnUp">▲</div>
+          <div class="right" id="btnRight">▶</div>
+          <div class="down" id="btnDown">▼</div>
+          <div class="left" id="btnLeft">◀</div>
+          <div class="middle"></div>
+        </div>
+        <div class="a-b">
+          <div class="b" id="btnB">B</div>
+          <div class="a" id="btnA">A</div>
+        </div>
+      </div>
+
+      <div class="start-select">
+        <div class="select" id="btnSelect">SELECT</div>
+        <div class="start" id="btnStart">START</div>
+      </div>
+
+      <div class="speaker">
+        <div class="dot placeholder"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot placeholder"></div>
+
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot open"></div>
+      </div>
+    </div>
+
+    <p class="ayuda">
+      <b>A</b>: buscar &middot; <b>B</b>: limpiar &middot; <b>&larr;&rarr;</b>:
+      navegar &middot; <b>&uarr;&darr;</b>: saltar 10 &middot; <b>START</b>:
+      movimientos &middot; <b>SELECT</b>: tipos
+    </p>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
