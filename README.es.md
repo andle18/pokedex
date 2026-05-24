@@ -24,7 +24,7 @@ Clona el repositorio
 Ejecuta:
 npm run dev
 Abre:
-http://localhost:5500
+://localhost:5500
 Variables de entorno
 No se requieren variables de entorno.
 

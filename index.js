@@ -85,7 +85,7 @@ function buscarPokemones() {
   const nombre = input.value.toLowerCase().trim();
   if (nombre) {
     infoContainer.innerHTML = "";
-    llamarServidor(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+    llamarServidor(`://pokeapi.co/api/v2/pokemon/${nombre}`);
   }
 }
 
@@ -95,25 +95,25 @@ function buscarPokemones() {
 document.getElementById("btnRight").addEventListener("click", () => {
   pressEffect("btnRight");
   acumulador++;
-  llamarServidor(`https://pokeapi.co/api/v2/pokemon/${acumulador}`);
+  llamarServidor(`://pokeapi.co/api/v2/pokemon/${acumulador}`);
 });
 
 document.getElementById("btnLeft").addEventListener("click", () => {
   pressEffect("btnLeft");
   if (acumulador > 1) acumulador--;
-  llamarServidor(`https://pokeapi.co/api/v2/pokemon/${acumulador}`);
+  llamarServidor(`://pokeapi.co/api/v2/pokemon/${acumulador}`);
 });
 
 document.getElementById("btnUp").addEventListener("click", () => {
   pressEffect("btnUp");
   acumulador = Math.min(acumulador + 10, 1025);
-  llamarServidor(`https://pokeapi.co/api/v2/pokemon/${acumulador}`);
+  llamarServidor(`s://pokeapi.co/api/v2/pokemon/${acumulador}`);
 });
 
 document.getElementById("btnDown").addEventListener("click", () => {
   pressEffect("btnDown");
   acumulador = Math.max(acumulador - 10, 1);
-  llamarServidor(`https://pokeapi.co/api/v2/pokemon/${acumulador}`);
+  llamarServidor(`://pokeapi.co/api/v2/pokemon/${acumulador}`);
 });
 
 // BOTÓN A → mostrar evoluciones del Pokémon actual
@@ -138,11 +138,11 @@ document.getElementById("btnStart").addEventListener("click", () => {
   const nombre = input.value.toLowerCase().trim();
   if (nombre) {
     infoContainer.innerHTML = "";
-    llamarServidor(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+    llamarServidor(`://pokeapi.co/api/v2/pokemon/${nombre}`);
     return;
   }
   if (!pokemonActual) {
-    llamarServidor(`https://pokeapi.co/api/v2/pokemon/${acumulador}`);
+    llamarServidor(`://pokeapi.co/api/v2/pokemon/${acumulador}`);
     return;
   }
   modoInfo = "movimientos";
@@ -204,7 +204,7 @@ async function cargarEvoluciones() {
 
     const pokemones = await Promise.all(
       nombres.map((n) =>
-        fetch(`https://pokeapi.co/api/v2/pokemon/${n}`).then((r) => r.json()),
+        fetch(`://pokeapi.co/api/v2/pokemon/${n}`).then((r) => r.json()),
       ),
     );
 

@@ -25,7 +25,7 @@ Clone the repository
 Run:
 npm run dev
 Open:
-http://localhost:5500
+://localhost:5500
 Environment variables
 This project does not require environment variables.
 
