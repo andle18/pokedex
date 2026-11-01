@@ -25,7 +25,7 @@ Clone the repository
 Run:
 npm run dev
 Open:
-://localhost:5500
+http://localhost:5500
 Environment variables
 This project does not require environment variables.
 
@@ -35,7 +35,7 @@ Project structure
 index.html — main page markup
 index.js — application logic
 style.css — styling and layout
-img — image assets
+img/pokemon.svg — Pokémon logo
 fabicon — favicon assets
 package.json — project metadata and scripts
 Testing

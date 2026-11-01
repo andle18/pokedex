@@ -24,7 +24,7 @@ Clona el repositorio
 Ejecuta:
 npm run dev
 Abre:
-://localhost:5500
+http://localhost:5500
 Variables de entorno
 No se requieren variables de entorno.
 
@@ -34,7 +34,7 @@ Estructura del proyecto
 index.html — markup principal
 index.js — lógica de la aplicación
 style.css — estilos
-img — assets de imagen
+img/pokemon.svg — logo de Pokémon
 fabicon — favicon
 package.json — metadata y scripts
 Testing
